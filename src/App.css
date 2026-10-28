@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+body {
+  background-color: #0b1020;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.humidity {
+  background-color: rgba(14, 165, 233, 0.1);
+  color: #7dd3fc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wind {
+  background-color: rgba(185, 165, 255, 0.1);
+  color: #b9a5ff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.visibility {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #34d399;
 }
 
-.App-link {
-  color: #61dafb;
+.uv {
+  background-color: rgba(245, 158, 10, 0.1);
+  color: #fbbf24;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scrolling::-webkit-scrollbar{
+  display: none;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("/public/fonts/Inter_18pt-Black.ttf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "inter";
+  src: url("/public/fonts/Inter_18pt-ExtraBold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "inter";
+  src: url("/public/fonts/Inter_18pt-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "inter";
+  src: url("/public/fonts/Inter_18pt-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "inter";
+  src: url("/public/fonts/Inter_18pt-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "inter";
+  src: url("/public/fonts/Inter_18pt-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "inter";
+  src: url("/public/fonts/Inter_18pt-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "inter";
+  src: url("/public/fonts/Inter_18pt-ExtraLight.ttf");
+  font-weight: 200;
 }
