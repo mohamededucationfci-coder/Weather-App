@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import CircularIndeterminate from "../Loading";
 export const DataWeather = createContext(null);
 
 export default function DataWeatherProvider({ children }) {
@@ -51,7 +52,7 @@ export default function DataWeatherProvider({ children }) {
       {DataApi ? (
         children
       ) : (
-        <div style={{ color: "white", textAlign: "center" }}>Loading...</div>
+        <CircularIndeterminate/>
       )}
     </DataWeather.Provider>
   );
