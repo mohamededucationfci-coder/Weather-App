@@ -1,6 +1,5 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import DayForecast from "../DayForecast";
 export const DataWeather = createContext(null);
 
 export default function DataWeatherProvider({ children }) {
