@@ -11,7 +11,7 @@ export default function DayForecastCard({
   max,
 }) {
   const day = new Date();
-  console.log("Dc", day.getDate());
+  
   return (
     <Grid
       container
@@ -28,7 +28,9 @@ export default function DayForecastCard({
           variant="h5"
           sx={{ color: "white", fontWeight: "500", fontSize: { xs: "14px" } }}
         >
-          {day.getDate() == title_p2 ? `Today` : `${title_p1} / ${title_p2}`}
+          {day.getDate() === Number(title_p2)
+            ? `Today`
+            : `${title_p1} / ${title_p2}`}{" "}
         </Typography>
       </Grid>
       <Grid

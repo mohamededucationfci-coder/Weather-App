@@ -16,7 +16,6 @@ import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 export default function StatisticsTemp() {
   const response = useContext(DataWeather);
   const visibility = Math.round(response.visibility);
-  console.log(visibility);
   function getVisibilityText(visibility) {
     if (visibility >= 10) return "Clear unobstructed horizon";
     if (visibility >= 5) return "Good visibility";
@@ -24,7 +23,6 @@ export default function StatisticsTemp() {
     if (visibility >= 1) return "Poor visibility";
     return "Very poor visibility, fog likely";
   }
-  console.log(response);
   const dataList = [
     {
       id: 1,

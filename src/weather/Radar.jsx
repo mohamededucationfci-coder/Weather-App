@@ -4,15 +4,14 @@ import { DataWeather } from "./context/ContextApiWeather";
 
 export default function WeatherMap({ overlay = "rain" }) {
   const response = useContext(DataWeather);
-  if (!response) return null;
 
   const src =
     `https://embed.windy.com/embed2.html` +
     `?lat=${response.lat}&lon=${response.lon}&zoom=6` +
     `&level=surface&overlay=${overlay}` +
-    `&product=ecmwf&menu=&message=true&marker=true` +
-    `&calendar=now&type=map&location=coordinates&detail=&metricWind=km%2Fh&metricTemp=%C2%B0C`;
-
+    `&product=ecmwf&menu=&message=true` +
+    `&calendar=now&type=map` +
+    `&metricWind=km%2Fh&metricTemp=%C2%B0C`;
   return (
     <Box
       sx={{

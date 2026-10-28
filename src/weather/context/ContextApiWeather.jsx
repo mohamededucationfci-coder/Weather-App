@@ -14,7 +14,6 @@ export default function DataWeatherProvider({ children }) {
             signal: controller.signal,
           },
         );
-        console.log(response);
         setData({
           city: response.data.location.name,
           country: response.data.location.country,
