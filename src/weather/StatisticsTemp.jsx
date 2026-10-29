@@ -14,10 +14,8 @@ import AirOutlinedIcon from "@mui/icons-material/AirOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 export default function StatisticsTemp() {
-  const {DataApi} = useContext(DataWeather);
+  const { DataApi } = useContext(DataWeather);
   const visibility = Math.round(DataApi.visibility);
-
-
 
   function getVisibilityText(visibility) {
     if (visibility >= 10) return "Clear unobstructed horizon";
@@ -57,7 +55,13 @@ export default function StatisticsTemp() {
     },
   ];
   return (
-    <Grid container spacing={1}>
+    <Grid
+      container
+      spacing={1}
+      sx={{
+        gridTemplateColumns: "repeat(2,1fr)",
+      }}
+    >
       {dataList.map((item) => {
         return (
           <Grid key={item.id} size={6}>

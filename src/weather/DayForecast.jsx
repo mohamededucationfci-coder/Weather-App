@@ -19,7 +19,7 @@ export default function DayForecast() {
         gap: {
           xs: "16px",
         },
-        padding: { xs: "10px" },
+        padding: { xs: "20px" },
       }}
     >
       <Grid

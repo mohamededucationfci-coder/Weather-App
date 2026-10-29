@@ -80,6 +80,7 @@ export default function Header() {
               event.preventDefault();
               if (valueInput !== "") {
                 setCityName(valueInput);
+                document.activeElement?.blur();
               }
             }}
           >

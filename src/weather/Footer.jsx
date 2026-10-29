@@ -17,7 +17,14 @@ export default function Footer() {
         gap: "15px",
       }}
     >
-      <Grid sx={{ display: "grid", gridTemplateColumns: "1fr", gap: "10px" ,justifyItems:"center"}}>
+      <Grid
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          gap: "10px",
+          justifyItems: "center",
+        }}
+      >
         <Typography
           variant="div"
           sx={{
@@ -41,12 +48,33 @@ export default function Footer() {
             SkyPlus
           </Typography>
         </Typography>
-        <Typography variant="div" sx={{ color: "#94A3B8", fontSize:{xs:"11px"}}}>
+        <Typography
+          variant="div"
+          sx={{ color: "#94A3B8", fontSize: { xs: "11px" } }}
+        >
           © {dateNow.getFullYear()} SkyPulse Weather Systems. All rights
           reserved.
         </Typography>
-        <Typography variant="div" sx={{ color: "#94A3B8" ,fontSize:{xs:"11px"}}}>
-          made with love by mohamed shehta
+        <Typography
+          variant="div"
+          sx={{
+            color: "#94A3B8",
+            fontSize: { xs: "11px", textTransform: "capitalize" },
+          }}
+        >
+          made with love by{" "}
+          <a
+            style={{
+              textDecoration: "none",
+              color: "#94A3B8",
+              fontSize: { xs: "11px", textTransform: "capitalize" },
+            }}
+            href="https://wa.me/201124931485"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            mohamed shehta
+          </a>
         </Typography>
       </Grid>
     </Grid>

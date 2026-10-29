@@ -12,7 +12,7 @@ import { Grid, Typography } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 export default function TodayForecast() {
-  const {DataApi} = useContext(DataWeather);
+  const { DataApi } = useContext(DataWeather);
   return (
     <Grid
       container
@@ -24,38 +24,15 @@ export default function TodayForecast() {
     >
       <Grid size={12}>
         <Typography
-          variant="div"
+          variant="h2"
           sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2,auto)",
-            justifyContent: "space-between",
-            alignItems: "center",
             textTransform: "capitalize",
+            color: "white",
+            fontWeight: "bold",
+            fontSize: { xs: "18px" },
           }}
         >
-          <Typography
-            variant="h2"
-            sx={{
-              color: "white",
-              fontWeight: "bold",
-              fontSize: { xs: "18px" },
-            }}
-          >
-            today's forecast
-          </Typography>
-          <Typography
-            variant="p"
-            sx={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2,auto)",
-              placeItems: "center",
-              color: "#B9A5FF",
-              fontWeight: "600",
-              fontSize: { xs: "12px" },
-            }}
-          >
-            view 24h <ChevronRightIcon />
-          </Typography>
+          today's forecast
         </Typography>
       </Grid>
       <Grid size={12} sx={{ gap: { xs: "10px" } }}>
