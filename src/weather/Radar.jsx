@@ -3,11 +3,11 @@ import { Box } from "@mui/material";
 import { DataWeather } from "./context/ContextApiWeather";
 
 export default function WeatherMap({ overlay = "rain" }) {
-  const response = useContext(DataWeather);
+  const {DataApi} = useContext(DataWeather);
 
   const src =
     `https://embed.windy.com/embed2.html` +
-    `?lat=${response.lat}&lon=${response.lon}&zoom=6` +
+    `?lat=${DataApi.lat}&lon=${DataApi.lon}&zoom=6` +
     `&level=surface&overlay=${overlay}` +
     `&product=ecmwf&menu=&message=true` +
     `&calendar=now&type=map` +
@@ -15,30 +15,18 @@ export default function WeatherMap({ overlay = "rain" }) {
   return (
     <Box
       sx={{
+        opacity: ".2",
         position: "relative",
         width: "100%",
-        height: "350px",
+        height: "300px",
         borderRadius: "16px",
         overflow: "hidden",
+        border: "0",
       }}
-    >
-      <Box
-        component="iframe"
-        title="weather map"
-        src={src}
-        loading="lazy"
-        sx={{ width: "100%", height: "100%", border: 0 }}
-      />
-
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          backgroundColor: "#081531be",
-          zIndex: 1,
-          color: "white",
-        }}
-      />
-    </Box>
+      component="iframe"
+      title="weather map"
+      src={src}
+      loading="lazy"
+    />
   );
 }

@@ -12,7 +12,7 @@ import { Grid, Typography } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 export default function TodayForecast() {
-  const response = useContext(DataWeather);
+  const {DataApi} = useContext(DataWeather);
   return (
     <Grid
       container
@@ -69,7 +69,7 @@ export default function TodayForecast() {
             gap: "12px",
           }}
         >
-          {response.toDayForecast.map((hour) => {
+          {DataApi.toDayForecast.map((hour) => {
             return (
               <Forecastday
                 key={hour.time}

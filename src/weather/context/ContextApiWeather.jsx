@@ -4,13 +4,14 @@ import CircularIndeterminate from "../Loading";
 export const DataWeather = createContext(null);
 
 export default function DataWeatherProvider({ children }) {
+  const [cityName, setCityName] = useState("Cairo");
   const [DataApi, setData] = useState(null);
   useEffect(() => {
     const controller = new AbortController();
-    async function handleRequest() {
+    async function handleRequest(cityName) {
       try {
         const response = await axios.get(
-          "https://api.weatherapi.com/v1/forecast.json?key=38e56d707e2349fd896200406260407&q=France&days=7",
+          `https://api.weatherapi.com/v1/forecast.json?key=38e56d707e2349fd896200406260407&q=${cityName}&days=7`,
           {
             signal: controller.signal,
           },
@@ -41,19 +42,15 @@ export default function DataWeatherProvider({ children }) {
         console.log(error);
       }
     }
-    handleRequest();
+    handleRequest(cityName);
     return () => {
       return controller.abort();
     };
-  }, []);
+  }, [cityName]);
   return (
-    <DataWeather.Provider value={DataApi}>
+    <DataWeather.Provider value={{ DataApi, cityName, setCityName }}>
       {" "}
-      {DataApi ? (
-        children
-      ) : (
-        <CircularIndeterminate/>
-      )}
+      {DataApi ? children : <CircularIndeterminate />}
     </DataWeather.Provider>
   );
 }

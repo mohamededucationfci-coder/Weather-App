@@ -12,7 +12,7 @@ import Typography from "@mui/material/Typography";
 import NorthIcon from "@mui/icons-material/North";
 import SouthIcon from "@mui/icons-material/South";
 export default function DayDetails() {
-  const response = useContext(DataWeather);
+  const {DataApi} = useContext(DataWeather);
 
   return (
     <Card
@@ -53,7 +53,7 @@ export default function DayDetails() {
               },
             }}
           >
-            {response.city}, {response.country}
+            {DataApi.city}, {DataApi.country}
           </Typography>
           <Typography variant="div">
             <Typography
@@ -73,7 +73,7 @@ export default function DayDetails() {
                 },
               }}
             >
-              updated {response.last_updated.split(" ")[1]}
+              updated {DataApi.last_updated.split(" ")[1]}
             </Typography>
           </Typography>
         </Typography>
@@ -98,7 +98,7 @@ export default function DayDetails() {
               }}
             >
               {" "}
-              {Math.round(response.temp)}{" "}
+              {Math.round(DataApi.temp)}{" "}
               <Typography
                 variant="span"
                 sx={{
@@ -126,15 +126,15 @@ export default function DayDetails() {
                 },
               }}
             >
-              {response.condition}
+              {DataApi.condition}
             </Typography>
           </Typography>
           <Typography variant="div">
             <img
               width={"100%"}
               height={"100%"}
-              srcSet={`${response.srcIMg}`}
-              src={`${response.srcIMg}`}
+              srcSet={`${DataApi.srcIMg}`}
+              src={`${DataApi.srcIMg}`}
               alt="img state weather"
               loading="lazy"
             />
@@ -170,7 +170,7 @@ export default function DayDetails() {
                 variant="span"
                 sx={{ color: "white", fontSize: "14px", fontWeight: "600" }}
               >
-                {Math.round(response.feelslike)}°C
+                {Math.round(DataApi.feelslike)}°C
               </Typography>
             </Typography>
           </Typography>
@@ -208,7 +208,7 @@ export default function DayDetails() {
                 variant="span"
                 sx={{ color: "white", textTransform: "capitalize" }}
               >
-                h : {Math.round(response.max)}°
+                h : {Math.round(DataApi.max)}°
               </Typography>
             </Typography>
             <Typography
@@ -236,7 +236,7 @@ export default function DayDetails() {
                 variant="span"
                 sx={{ color: "white", textTransform: "capitalize" }}
               >
-                l : {Math.round(response.min)}°
+                l : {Math.round(DataApi.min)}°
               </Typography>
             </Typography>
           </Typography>

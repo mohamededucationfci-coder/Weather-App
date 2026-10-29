@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { Grid, Typography } from "@mui/material";
 
 export default function DayForecast() {
-  const response = useContext(DataWeather);
+  const {DataApi} = useContext(DataWeather);
   return (
     <Grid
       container
@@ -40,7 +40,7 @@ export default function DayForecast() {
             fontSize: { xs: "18px" },
           }}
         >
-          {response.dayForecasct.length}-day forecast
+          {DataApi.dayForecasct.length}-day forecast
         </Typography>
         <Typography
           variant="span"
@@ -51,16 +51,16 @@ export default function DayForecast() {
             fontSize: { xs: "12px" },
           }}
         >
-          {response.city} , {response.country}
+          {DataApi.city} , {DataApi.country}
         </Typography>
       </Grid>
       <Grid size={12} sx={{}}>
-        {response.dayForecasct.map((day) => {
+        {DataApi.dayForecasct.map((day) => {
           console.log();
           return (
             <DayForecastCard
-              key={response.dayForecasct.indexOf(day)}
-              id={response.dayForecasct.indexOf(day)}
+              key={DataApi.dayForecasct.indexOf(day)}
+              id={DataApi.dayForecasct.indexOf(day)}
               title_p1={day.date.split("-")[1]}
               title_p2={day.date.split("-")[2]}
               icon={day.day.condition.icon}

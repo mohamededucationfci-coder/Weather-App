@@ -14,8 +14,11 @@ import AirOutlinedIcon from "@mui/icons-material/AirOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 export default function StatisticsTemp() {
-  const response = useContext(DataWeather);
-  const visibility = Math.round(response.visibility);
+  const {DataApi} = useContext(DataWeather);
+  const visibility = Math.round(DataApi.visibility);
+
+
+
   function getVisibilityText(visibility) {
     if (visibility >= 10) return "Clear unobstructed horizon";
     if (visibility >= 5) return "Good visibility";
@@ -28,15 +31,15 @@ export default function StatisticsTemp() {
       id: 1,
       title: "humidity",
       icon: <WaterDropOutlinedIcon />,
-      number: `${Math.round(response.humidity)}`,
-      description: `dew point ${Math.round(response.dewPoint)}`,
+      number: `${Math.round(DataApi.humidity)}`,
+      description: `dew point ${Math.round(DataApi.dewPoint)}`,
     },
     {
       id: 2,
       title: "wind",
       icon: <AirOutlinedIcon />,
-      number: `${Math.round(response.wind)}`,
-      description: `dir : ${response.wind_dir}`,
+      number: `${Math.round(DataApi.wind)}`,
+      description: `dir : ${DataApi.wind_dir}`,
     },
     {
       id: 3,
@@ -49,8 +52,8 @@ export default function StatisticsTemp() {
       id: 4,
       title: `UV Index`,
       icon: <WbSunnyOutlinedIcon />,
-      number: `${Math.round(response.uv)}`,
-      description: `Protection needed until ${response.sunSet}`,
+      number: `${Math.round(DataApi.uv)}`,
+      description: `Protection needed until ${DataApi.sunSet}`,
     },
   ];
   return (
