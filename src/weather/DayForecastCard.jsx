@@ -11,14 +11,16 @@ export default function DayForecastCard({
   max,
 }) {
   const day = new Date();
-  
+
   return (
     <Grid
       container
       sx={{
+        display: "grid",
         gridTemplateColumns: "auto auto auto 1fr auto",
         justifyContent: "space-between",
         alignItems: "center",
+        gap: "10px",
         paddingY: { xs: "10px" },
         borderTop: id === 0 ? "" : "1px solid #24304A",
       }}
@@ -60,12 +62,12 @@ export default function DayForecastCard({
           {min}°
         </Typography>
       </Grid>
-      <Grid>
+      <Grid >
         <Box
           variant="div"
           sx={{
-            height: "5px",
-            width: "100px",
+            height: "10px",
+            width: "100%",
             background: "#1B2438",
             borderRadius: "16px",
             position: "relative",

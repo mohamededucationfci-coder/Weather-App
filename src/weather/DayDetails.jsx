@@ -11,8 +11,9 @@ import Typography from "@mui/material/Typography";
 //Icon
 import NorthIcon from "@mui/icons-material/North";
 import SouthIcon from "@mui/icons-material/South";
+import { Box } from "@mui/material";
 export default function DayDetails() {
-  const {DataApi} = useContext(DataWeather);
+  const { DataApi } = useContext(DataWeather);
 
   return (
     <Card
@@ -21,7 +22,7 @@ export default function DayDetails() {
         border: "1px solid #24304A",
         boxShadow: "0 0 45px -10px rgba(251,191,36,0.45)",
         borderRadius: "16px",
-
+        height: "calc(100% - 16px)",
         padding: {
           xs: "8px ",
         },
@@ -29,6 +30,7 @@ export default function DayDetails() {
     >
       <CardContent
         sx={{
+          position: "relative",
           display: "grid",
           gap: {
             xs: "16px",
@@ -129,14 +131,24 @@ export default function DayDetails() {
               {DataApi.condition}
             </Typography>
           </Typography>
-          <Typography variant="div">
-            <img
-              width={"100%"}
-              height={"100%"}
-              srcSet={`${DataApi.srcIMg}`}
-              src={`${DataApi.srcIMg}`}
-              alt="img state weather"
+          <Typography
+            variant="div"
+            sx={{
+              position: "absolute",
+              bottom: { xs: "25px", md: "-50px" },
+              right: "-60px",
+            }}
+          >
+            <Box
+              component="img"
+              src={DataApi.srcIMg}
+              alt="Weather condition"
               loading="lazy"
+              sx={{
+                width: { xs: "200px", md: "350px" },
+                height: { xs: "200px", md: "350px" },
+                objectFit: "contain",
+              }}
             />
           </Typography>
         </Typography>

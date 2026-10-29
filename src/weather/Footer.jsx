@@ -1,5 +1,5 @@
 // MUI
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 //Icon
 import CloudQueueIcon from "@mui/icons-material/CloudQueue";
@@ -63,18 +63,39 @@ export default function Footer() {
           }}
         >
           made with love by{" "}
-          <a
-            style={{
-              textDecoration: "none",
-              color: "#94A3B8",
-              fontSize: { xs: "11px", textTransform: "capitalize" },
-            }}
+          <Box
+            component="a"
             href="https://wa.me/201124931485"
             target="_blank"
             rel="noopener noreferrer"
+            sx={{
+              textDecoration: "none",
+              color: "#94A3B8",
+              fontSize: { xs: "11px", md: "13px" },
+              textTransform: "capitalize",
+            }}
           >
-            mohamed shehta
-          </a>
+            Mohamed Shehta
+          </Box>
+        </Typography>
+        <Typography
+          sx={{ color: "#94A3B8", fontSize: { xs: "11px", md: "13px" } }}
+        >
+          Weather data provided by{" "}
+          <Box
+            component="a"
+            href="https://www.weatherapi.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              textDecoration: "none",
+              color: "#94A3B8",
+              fontSize: { xs: "11px", md: "13px" },
+              textTransform: "capitalize",
+            }}
+          >
+            WeatherAPI
+          </Box>
         </Typography>
       </Grid>
     </Grid>

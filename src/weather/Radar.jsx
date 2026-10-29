@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { DataWeather } from "./context/ContextApiWeather";
 
 export default function WeatherMap({ overlay = "rain" }) {
-  const {DataApi} = useContext(DataWeather);
+  const { DataApi } = useContext(DataWeather);
 
   const src =
     `https://embed.windy.com/embed2.html` +
@@ -18,7 +18,10 @@ export default function WeatherMap({ overlay = "rain" }) {
         opacity: ".2",
         position: "relative",
         width: "100%",
-        height: "300px",
+        height: {
+          xs: "300px",
+          md: "100%",
+        },
         borderRadius: "16px",
         overflow: "hidden",
         border: "0",
