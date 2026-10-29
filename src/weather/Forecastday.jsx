@@ -4,11 +4,13 @@ import { Grid, Typography } from "@mui/material";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
 export default function Forecastday({ time, temp, srcIMG, humidity }) {
   const hour = `${new Date().getHours()}:00`;
+
+  console.log(hour.length);
   return (
     <Grid
       container
       sx={{
-        background: time === hour ? "#B9A5FF" : "#151C2E",
+        background: time === (hour.length===4?`0${hour}`:hour) ? "#B9A5FF" : "#151C2E",
         border: time === hour ? "" : "1px solid #24304A",
         borderRadius: "16px",
         padding: "10px",
@@ -23,7 +25,7 @@ export default function Forecastday({ time, temp, srcIMG, humidity }) {
         <Typography
           variant="span"
           sx={{
-            color: time === hour ? "black" : "#94A3B8",
+            color: time === (hour.length===4?`0${hour}`:hour) ?"black" : "#94A3B8",
             fontWeight: "bold",
             fontSize: { xs: "12px" },
           }}
@@ -45,7 +47,7 @@ export default function Forecastday({ time, temp, srcIMG, humidity }) {
         <Typography
           variant="h4"
           sx={{
-            color: time === hour ? "black" : "white",
+            color: time === (hour.length===4?`0${hour}`:hour) ? "black" : "white",
             fontWeight: "bold",
             fontSize: { xs: "14px" },
           }}
@@ -55,7 +57,7 @@ export default function Forecastday({ time, temp, srcIMG, humidity }) {
       </Grid>
       <Grid
         sx={{
-          color: time === hour ? "black" : "#94A3B8",
+          color:time === (hour.length===4?`0${hour}`:hour) ?"black" : "#94A3B8",
           fontWeight: "bold",
           fontSize: { xs: "10px" },
           display: "grid",
@@ -66,7 +68,7 @@ export default function Forecastday({ time, temp, srcIMG, humidity }) {
         {humidity} %
         <WaterDropIcon
           sx={{
-            color: time === hour ? "black" : "#B9A5FF",
+            color: time === (hour.length===4?`0${hour}`:hour) ?"black" : "#B9A5FF",
             fontSize: { xs: "12px" },
           }}
         />
