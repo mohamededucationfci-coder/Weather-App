@@ -2,7 +2,7 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { InputBase } from "@mui/material";
+import { InputBase, Button } from "@mui/material";
 
 // Icon
 import CloudQueueIcon from "@mui/icons-material/CloudQueue";
@@ -12,12 +12,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import { DataWeather } from "./context/ContextApiWeather";
 
 // Hook
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 export default function Header() {
-  const { cityName, setCityName } = useContext(DataWeather);
+  const [valueInput, setValueInput] = useState("");
+  const { setCityName } = useContext(DataWeather);
   function handleCity(event) {
-    setCityName(event.target.value);
+    setValueInput(event.target.value);
   }
   return (
     <Box>
@@ -74,13 +75,39 @@ export default function Header() {
             gap: { xs: "8px" },
           }}
         >
-          <form>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              if (valueInput !== "") {
+                setCityName(valueInput);
+              }
+            }}
+          >
             {" "}
             <InputBase
+              value={valueInput}
+              onChange={(event) => {
+                handleCity(event);
+              }}
               placeholder="Search city..."
-              startAdornment={<SearchIcon sx={{ color: "#B9A5FF", mr: 1 }} />}
+              startAdornment={
+                <Button
+                  type="submit"
+                  sx={{
+                    margin: "3px 6px 3px 0",
+                    background: "#151C2E",
+                    border: "transparent",
+                    display: "grid",
+                    placeContent: "center",
+                    minWidth: "40px !important",
+                    height: "30px",
+                  }}
+                >
+                  <SearchIcon sx={{ color: "#B9A5FF" }} />
+                </Button>
+              }
               sx={{
-                height: "36px",
+                // height: "36px",
                 width: {
                   xs: "180px",
                 },
@@ -91,6 +118,7 @@ export default function Header() {
                 color: "white",
               }}
             />
+            {/* <button>Search</button> */}
           </form>
 
           <Typography

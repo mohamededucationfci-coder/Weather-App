@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { Grid, Typography } from "@mui/material";
 
 export default function DayForecast() {
-  const {DataApi} = useContext(DataWeather);
+  const { DataApi } = useContext(DataWeather);
   return (
     <Grid
       container
@@ -56,7 +56,6 @@ export default function DayForecast() {
       </Grid>
       <Grid size={12} sx={{}}>
         {DataApi.dayForecasct.map((day) => {
-          console.log();
           return (
             <DayForecastCard
               key={DataApi.dayForecasct.indexOf(day)}
