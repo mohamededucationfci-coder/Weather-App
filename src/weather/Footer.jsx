@@ -70,7 +70,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             sx={{
               textDecoration: "none",
-              color: "#94A3B8",
+              color: "white",
               fontSize: { xs: "11px", md: "13px" },
               textTransform: "capitalize",
             }}
@@ -89,7 +89,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             sx={{
               textDecoration: "none",
-              color: "#94A3B8",
+              color: "white",
               fontSize: { xs: "11px", md: "13px" },
               textTransform: "capitalize",
             }}

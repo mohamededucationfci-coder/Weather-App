@@ -11,6 +11,7 @@ import WeatherMap from "./Radar";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import UpButton from "./UpButton";
+import TemperatureChart from "./Chart";
 
 export default function WeatherAPP() {
   return (
@@ -28,6 +29,9 @@ export default function WeatherAPP() {
         </Grid>
         <Grid size={12}>
           <TodayForecast />
+        </Grid>
+        <Grid size={12}>
+          <TemperatureChart />
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
           <DayForecast />

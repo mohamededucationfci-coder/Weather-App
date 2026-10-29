@@ -15,8 +15,8 @@ export default function StatisticsCard({
       sx={{
         background: "#151C2E",
         border: "1px solid #24304A",
-        height:"100%",
         borderRadius: "16px",
+        height:"100%",
         display: "grid",
         gridTemplateRows: "repeat(3,auto)",
       }}

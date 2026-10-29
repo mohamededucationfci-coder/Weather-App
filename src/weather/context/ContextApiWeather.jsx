@@ -4,9 +4,12 @@ import CircularIndeterminate from "../Loading";
 export const DataWeather = createContext(null);
 
 export default function DataWeatherProvider({ children }) {
-  const [cityName, setCityName] = useState("Cairo");
+  const [cityName, setCityName] = useState(() => {
+    return window.localStorage.getItem("city") || "Cairo";
+  });
   const [DataApi, setData] = useState(null);
   useEffect(() => {
+    window.localStorage.setItem("city", cityName);
     const controller = new AbortController();
     async function handleRequest(cityName) {
       try {

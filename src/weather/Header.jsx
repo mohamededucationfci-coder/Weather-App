@@ -108,9 +108,9 @@ export default function Header() {
                 </Button>
               }
               sx={{
-                // height: "36px",
                 width: {
                   xs: "180px",
+                  sm: "350px",
                 },
                 px: "10px",
                 border: "1px solid rgba(185,165,255,0.3)",
