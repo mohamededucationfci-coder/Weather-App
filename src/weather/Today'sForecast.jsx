@@ -8,9 +8,6 @@ import Forecastday from "./Forecastday";
 //MUI
 import { Grid, Typography } from "@mui/material";
 
-//Icon
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-
 export default function TodayForecast() {
   const { DataApi } = useContext(DataWeather);
   return (
