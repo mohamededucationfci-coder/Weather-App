@@ -15,7 +15,7 @@ export default function WeatherMap({ overlay = "rain" }) {
   return (
     <Box
       sx={{
-        opacity: ".2",
+        opacity: ".5",
         position: "relative",
         width: "100%",
         height: {
