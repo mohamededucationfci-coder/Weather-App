@@ -4,7 +4,6 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import {
   InputBase,
-  Button,
   Paper,
   List,
   ListItemButton,
@@ -132,19 +131,7 @@ export default function Header() {
               onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
               placeholder="Search city..."
               startAdornment={
-                <Button
-                  type="submit"
-                  sx={{
-                    margin: "3px 6px 3px 0",
-                    background: "#151C2E",
-                    border: "transparent",
-                    display: "grid",
-                    placeContent: "center",
-                    height: "30px",
-                  }}
-                >
-                  <SearchIcon sx={{ color: "#B9A5FF" }} />
-                </Button>
+                <SearchIcon sx={{ color: "#B9A5FF", mr: "5px" }} />
               }
               sx={{
                 width: { xs: "200px", sm: "350px", md: "500px" },
@@ -183,6 +170,8 @@ export default function Header() {
                       onMouseDown={(e) => {
                         e.preventDefault();
                         selectCity(city);
+                        setValueInput("");
+                        document.activeElement?.blur();
                       }}
                       sx={{
                         color: "white",
