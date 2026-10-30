@@ -135,8 +135,8 @@ export default function DayDetails() {
             variant="div"
             sx={{
               position: "absolute",
-              bottom: { xs: "25px", md: "-50px" },
-              right: "-60px",
+              bottom: "50px",
+              right: "0px",
             }}
           >
             <Box
@@ -145,8 +145,8 @@ export default function DayDetails() {
               alt="Weather condition"
               loading="lazy"
               sx={{
-                width: { xs: "200px", md: "350px" },
-                height: { xs: "200px", md: "350px" },
+                width: "150px",
+                height: "150px",
                 objectFit: "contain",
               }}
             />
